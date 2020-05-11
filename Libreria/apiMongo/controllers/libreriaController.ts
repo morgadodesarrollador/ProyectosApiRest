@@ -67,13 +67,14 @@ class libreriaController {
   }
 
   public filtrarAutor(req: any,res:Response){
-    let autorFiltro: any = {
+    const autorFiltro = {
       nombre: req.body.nombre,
       nacionalidad : req.body.nacionalidad
     }
-    
+    console.log (autorFiltro);/*
     AutorModel.find(autorFiltro, (err, autoresDB)  => {
       if ( err ) throw err; 
+      console.log ('-->', autoresDB);
       if (autoresDB) {
         res.json({
           ok: true,
@@ -81,9 +82,10 @@ class libreriaController {
       })
       }
     });
-
+*/
     AutorModel.find(autorFiltro)
     .then( autoresDB => {
+      console.log ('-->', autoresDB);
       res.json({
         ok: true,
         autor: autoresDB
