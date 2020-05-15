@@ -1,0 +1,32 @@
+<div class="container">
+
+    <p>Nuevo Registro de Usuario</p>
+    <form #fRegister="ngForm" (ngSubmit)="new(fRegister)" >
+        <div class="form-group">
+            <label >Nombre</label>
+            <input type="text" class="form-control" 
+                    name="nombre" [(ngModel)]="usuario.nombre">
+        </div>
+        <div class="form-group">
+            <label>Password</label>
+            <input type="password" class="form-control" required
+                name="password" [(ngModel)]="usuario.password">
+        </div>
+        <div class="form-group">
+            <label>email</label>
+            <input type="email" class="form-control" required
+                name="correo" [(ngModel)]="usuario.email">
+        </div>
+        <div class="form-group">
+            <label>Rol</label>
+            <input type="text" class="form-control" 
+                name="rol" [(ngModel)]="usuario.rol">
+        </div>
+        <div class="form-group">
+            <label>Avatar</label>
+            <input type="text" class="form-control" 
+                name="avatar" [(ngModel)]="usuario.foto">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>

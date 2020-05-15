@@ -1,0 +1,23 @@
+<h2>Administraciónn de Usuarios</h2>
+<div class="container">
+    <ul class="list-group list-group-horizontal-sm">
+        <li class="list-group-item">
+            <a  [routerLink]="['listar']">Mostrar Usuarios</a>
+        </li>
+        <li class="list-group-item">
+            <i class="fas fa-user-plus"></i>
+            <a  [routerLink]="['new']">
+                
+                <label> Usuario</label>
+            </a>
+    
+        </li>
+      </ul>
+</div>
+<div class="container">
+    <router-outlet>
+
+    </router-outlet>
+</div>
+
+

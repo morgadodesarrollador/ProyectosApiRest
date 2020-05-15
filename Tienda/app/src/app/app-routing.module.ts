@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { CategoriasModule } from './categorias/categorias.module';
 import { HomeComponent } from './components/home/home.component';
-import { UsuariosModule } from './usuarios/usuarios.module';
 
 
 const routes: Routes = [
@@ -13,7 +12,7 @@ const routes: Routes = [
   },
   {
     path: 'usuarios',
-    loadChildren: () => import('./usuarios/usuarios.module').then( m => m.UsuariosModule)
+    loadChildren: () => import('./modules/usuarios/usuarios.module').then( m => m.UsuariosModule)
   },
 ];
 

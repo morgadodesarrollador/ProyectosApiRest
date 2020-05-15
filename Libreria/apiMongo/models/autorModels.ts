@@ -12,7 +12,7 @@ const autorSchema = new Schema({
     fecha: { type: Date },
     correo: { email: String, tipo: String },
     libros: [{ type: Schema.Types.ObjectId, ref: "Libro" }],
-}, { collection: 'autores'});
+}, { collection: 'Autores'});
 
 
 // creamos la interfaz  --> autocompletado

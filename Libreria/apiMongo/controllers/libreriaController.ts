@@ -68,7 +68,7 @@ class libreriaController {
 
   public filtrarAutor(req: any,res:Response){
     const autorFiltro = {
-      nombre: req.body.nombre,
+    //  nombre: req.body.nombre,
       nacionalidad : req.body.nacionalidad
     }
     console.log (autorFiltro);/*
@@ -83,13 +83,49 @@ class libreriaController {
       }
     });
 */
-    AutorModel.find(autorFiltro)
+    AutorModel.find(autorFiltro).populate('libros').lean()
     .then( autoresDB => {
-      console.log ('-->', autoresDB);
+      console.log(autoresDB);
       res.json({
         ok: true,
         autor: autoresDB
-      })
+      });
+      
+    })
+    .catch(err => {
+
+    });
+  }
+  public removeAutor(req: any,res:Response) {
+    const autorFiltro = {
+      nacionalidad : req.body.nacionalidad
+    }
+    AutorModel.findOneAndRemove(autorFiltro)
+    .then( autoresDB => {
+      console.log(autoresDB);
+      res.json({
+        ok: true,
+        autor: autoresDB
+      });
+      
+    })
+    .catch(err => {
+
+    });
+  }
+  public updateAutor(req: any,res:Response) {
+    const autorFiltro = {
+      nacionalidad : req.body.nacionalidad
+    }
+    
+    AutorModel.findOneAndUpdate(autorFiltro,{nacionalidad:'china'}, {new: true})
+    .then( autoresDB => {
+      console.log(autoresDB);
+      res.json({
+        ok: true,
+        autor: autoresDB
+      });
+      
     })
     .catch(err => {
 

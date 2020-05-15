@@ -14,7 +14,7 @@ export class CategoriasServiceService {
   };
   // tslint:disable-next-line: quotemark
   
-  ruta = 'http://www.proyectos.com/Tienda/apiPHP/controllers/categorias/listar.php';
+  
   params = null;
 
   constructor(private http: HttpClient) { }
@@ -24,7 +24,7 @@ export class CategoriasServiceService {
   }
 
   getCategorias(): Observable<any>{
-    console.log('Cargando las categorias de la API ...');
+    const ruta = 'http://www.proyectos.com/Tienda/apiPHP/controllers/categorias/listar.php';
     /*
     this.http.post(this.ruta, this.params, this.httpOptions)
       .subscribe(datos => {
@@ -32,7 +32,7 @@ export class CategoriasServiceService {
       })
       */
      // tslint:disable-next-line: align
-     return this.http.get(this.ruta, this.params, this.httpOptions);
+     return this.http.get(ruta, this.httpOptions);
   }
 
 }

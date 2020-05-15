@@ -1,8 +1,10 @@
 <?php
-require ('../conexion.php');
+require ('../../conexion.php');
 /* recoger los datos que llegan del POST --> FORMULARIO */
-$idUsu = $_POST['idUsu'];
-$loginUsu = $_POST['loginUsu'];
+$email = $_POST['email'];
+$foto = $_POST['foto'];
+echo $email, $foto;
+/*
 $passUsu = $_POST['passUsu'];
 $nombreUsu =  $_POST['nombreUsu'];
 $apellidosUsu =  $_POST['apellidosUsu'];
@@ -13,7 +15,8 @@ $sql = "insert into usuarios values(?,?,?,?,?,?)";
 $st = $PDO->prepare($sql);
 $st->execute(array($idUsu,$loginUsu,$passUsu,$nombreUsu,$apellidosUsu,$rolUsu));
 $resultado = $st->fetchAll(PDO::FETCH_ASSOC);
-
+*/
+$resultado = "insertado";
 echo (json_encode($resultado, true));
 
  ?>

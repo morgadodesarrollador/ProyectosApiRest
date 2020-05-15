@@ -6,6 +6,8 @@ import libreriaController from '../controllers/libreriaController';
 const libreriaRouter = Router();
 const libreriaCtrl  = new libreriaController();
 
+libreriaRouter.post('/autor/remove', libreriaCtrl.removeAutor);
+libreriaRouter.post('/autor/update', libreriaCtrl.updateAutor);
 libreriaRouter.post('/autor', libreriaCtrl.newAutor);
 libreriaRouter.post('/autor/filtrar', libreriaCtrl.filtrarAutor);
 
